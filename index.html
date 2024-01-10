@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Formularios de Contacto - HTML5, CSS3, y Javascript</title>
+  </head>
+  <body>
+    <section class="form-contact">
+      <header>
+        <span>
+          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+        </span>
+      </header>
+
+      <form action="envioCorrecto.html" id="formulario">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre">;
+
+        <label for="correo">Correo Electrónico</label>
+        <input type="text" name ="correo" id="correo">;
+
+        <label for="telefono">Teléfono</label>
+        <input type="text" name="telefono" id="telefono">;
+
+        <label for="mensaje">Mensaje</label>
+        <textarea name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+        <input type="submit" name="enviar" id="enviar" value="enviar">
+
+        <!--Mensajes de error-->
+        <ul id="errores">
+        </ul>
+      </form>
+    </section>
+    <script src="/scripts/index.js"></script>
+  </body>
+</html>
