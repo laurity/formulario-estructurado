@@ -22,7 +22,7 @@ const validar = (evento) => {
      nombre.value.trim().length === 0 && mensajesError.push('El campo nombre es obligatorio');
 
     //Nombre con caracteres válidos
-     !/^[a-zA-Z0-9]*$/.exec(nombre.value.trim()) && mensajesError.push("El campo nombre solo acepta caracteres alfanuméricos");
+     !/^[a-zA-Z0-9]*$/.test(nombre.value.trim()) && mensajesError.push("El campo nombre solo acepta caracteres alfanuméricos");
               
     //Correo electrónico válido
      !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
@@ -30,7 +30,7 @@ const validar = (evento) => {
     ) && mensajesError.push("El campo correo electrónico no es válido");
 
     //El teléfono debe de ser válido
-     !/^[679]\d{8}$/.exec(telefono.value.trim()) && mensajesError.push("El campo teléfono no es válido");
+     !/^[679]\d{8}$/.test(telefono.value.trim()) && mensajesError.push("El campo teléfono no es válido");
 
     //Evitar mensajes cortos
      mensaje.value.trim().length < 10 && mensajesError.push("El campo mensaje debe de tener al menos 10 caracteres");
