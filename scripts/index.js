@@ -18,34 +18,23 @@ const validar = (evento) => {
 
   // VALIDACIONES
 
-  switch (true) {
     // Nombre como campo obligatorio
-    case nombre.value.trim().length === 0:
-      mensajesError = mensajesError.concat("El campo nombre es obligatorio");
+     nombre.value.trim().length === 0 && mensajesError.push('El campo nombre es obligatorio');
 
     //Nombre con caracteres válidos
-    case !/^[a-zA-Z0-9]*$/.exec(nombre.value.trim()):
-      mensajesError = mensajesError.concat(
-        "El campo nombre solo acepta caracteres alfanuméricos"
-      );
-
+     !/^[a-zA-Z0-9]*$/.exec(nombre.value.trim()) && mensajesError.push("El campo nombre solo acepta caracteres alfanuméricos");
+              
     //Correo electrónico válido
-    case !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
+     !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
       correo.value.trim()
-    ):
-      mensajesError = mensajesError.concat(
-        "El campo correo electrónico no es válido"
-      );
+    ) && mensajesError.push("El campo correo electrónico no es válido");
 
     //El teléfono debe de ser válido
-    case !/^[679]\d{8}$/.exec(telefono.value.trim()):
-      mensajesError = mensajesError.concat("El campo teléfono no es válido");
+     !/^[679]\d{8}$/.exec(telefono.value.trim()) && mensajesError.push("El campo teléfono no es válido");
 
     //Evitar mensajes cortos
-    case mensaje.value.trim().length < 10:
-      mensajesError = mensajesError.concat(
-        "El campo mensaje debe de tener al menos 10 caracteres"
-      );
+     mensaje.value.trim().length < 10 && mensajesError.push("El campo mensaje debe de tener al menos 10 caracteres");
+
   }
 
   // Enviar o Mostrar mensajes de error
@@ -62,5 +51,4 @@ const validar = (evento) => {
       errores.appendChild(miLi);
     });
   }
-};
 formulario.addEventListener("submit", validar);
